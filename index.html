@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>2136 Glenwood Ave — Old West End, Toledo</title>
-<meta name="description" content="Off-market Foursquare in Toledo's Old West End Historic District. 3,600 SF, dual HVAC, contract price $70,000.">
+<meta name="description" content="Old West End Foursquare in Toledo — 3,600 SF, dual HVAC. Priced to move at $98,900.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -20,7 +20,7 @@
     --brick:#8C3A2A;
     --brick-deep:#732F22;
     --white:#FFFDF8;
-    --max:740px;
+    --max:760px;
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
@@ -40,74 +40,93 @@
   }
   a{color:var(--brick);}
   a:visited{color:var(--brick);}
+  svg.icon{width:22px; height:22px; stroke:var(--brass); fill:none; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; flex-shrink:0;}
 
-  /* ---------- header ---------- */
-  .masthead{
-    padding:52px 0 20px;
+  /* ---------- full-bleed hero ---------- */
+  .hero-wrap{
+    position:relative;
+    width:100%;
+    height:min(78vh, 640px);
+    min-height:420px;
+    overflow:hidden;
+    background:var(--ink);
   }
-  .masthead .dateline{
-    font-size:14px;
-    color:var(--brass);
+  .hero-wrap img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    opacity:.94;
+  }
+  .hero-scrim{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(180deg, rgba(28,43,57,.15) 0%, rgba(28,43,57,0) 30%, rgba(28,43,57,.55) 72%, rgba(28,43,57,.88) 100%);
+  }
+  .hero-content{
+    position:absolute;
+    left:0; right:0; bottom:0;
+    padding:0 28px 40px;
+  }
+  .hero-inner{
+    max-width:var(--max);
+    margin:0 auto;
+  }
+  .hero-badge{
+    display:inline-block;
+    font-size:13px;
     font-weight:600;
-    letter-spacing:.01em;
+    color:var(--white);
+    background:rgba(140,58,42,.85);
+    padding:6px 14px;
+    margin-bottom:16px;
   }
-  h1{
+  .hero-inner h1{
     font-family:'Fraunces', serif;
     font-weight:500;
-    font-size:clamp(38px, 6vw, 58px);
-    line-height:1.05;
-    margin:10px 0 8px;
-    color:var(--ink);
+    font-size:clamp(38px, 6.4vw, 64px);
+    line-height:1.03;
+    margin:0 0 10px;
+    color:var(--white);
   }
-  .locale{
-    font-size:16px;
-    color:var(--ink-soft);
-    margin:0 0 28px;
+  .hero-inner .price{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:clamp(24px, 3vw, 30px);
+    color:var(--white);
+    margin:2px 0 10px;
   }
-  .locale .sep{
-    color:var(--brass-line);
-    margin:0 8px;
+  .hero-inner .locale{
+    font-size:17px;
+    color:#E9E3D3;
+    margin:0;
   }
+  .hero-inner .locale .sep{ color:#8A7F65; margin:0 8px; }
 
-  /* ---------- hero photo ---------- */
-  figure.hero{
-    margin:0 0 6px;
-    border-top:1px solid var(--brass-line);
+  /* ---------- quick facts strip ---------- */
+  .facts{
+    display:flex;
+    flex-wrap:wrap;
     border-bottom:1px solid var(--brass-line);
-    padding:18px 0;
+    margin:0 0 40px;
   }
-  figure.hero img{
-    width:100%;
-    display:block;
-    height:auto;
-  }
-  figure.hero figcaption{
-    font-size:13px;
-    color:var(--slate);
-    font-style:italic;
-    padding-top:10px;
-  }
-
-  /* ---------- stat ledger ---------- */
-  .ledger{
-    display:grid;
-    grid-template-columns:repeat(4, 1fr);
-    margin:34px 0 40px;
-  }
-  .ledger .stat{
-    padding:0 18px;
+  .facts .fact{
+    flex:1 1 20%;
+    text-align:center;
+    padding:22px 8px;
     border-left:1px solid var(--brass-line);
   }
-  .ledger .stat:first-child{border-left:none; padding-left:0;}
-  .ledger .stat .num{
+  .facts .fact:first-child{border-left:none;}
+  .facts .fact svg.icon{margin:0 auto 8px;}
+  .facts .fact .num{
     font-family:'Fraunces', serif;
-    font-size:26px;
+    font-size:20px;
     font-weight:500;
     color:var(--ink);
     display:block;
   }
-  .ledger .stat .lbl{
-    font-size:13px;
+  .facts .fact .lbl{
+    font-size:12px;
     color:var(--slate);
     margin-top:2px;
   }
@@ -115,112 +134,99 @@
   /* ---------- lede ---------- */
   p.lede{
     font-family:'Fraunces', serif;
-    font-size:21px;
+    font-size:23px;
     font-weight:400;
     font-style:italic;
-    line-height:1.55;
+    line-height:1.5;
     color:var(--ink-soft);
-    margin:0 0 44px;
+    margin:36px 0 48px;
   }
 
   /* ---------- section headings ---------- */
   h2{
     font-family:'Fraunces', serif;
     font-weight:500;
-    font-size:26px;
+    font-size:28px;
     color:var(--ink);
-    margin:0 0 18px;
-    padding-bottom:12px;
+    margin:0 0 22px;
+    padding-bottom:14px;
     border-bottom:1px solid var(--brass-line);
   }
-  section{margin:48px 0;}
+  section{margin:56px 0;}
 
-  ul.plain{
-    list-style:none;
-    margin:0;
-    padding:0;
-  }
-  ul.plain li{
-    position:relative;
-    padding:0 0 14px 22px;
-    color:var(--ink-soft);
-  }
-  ul.plain li::before{
-    content:"—";
-    position:absolute;
-    left:0;
-    color:var(--brass);
-  }
-  ol.steps{
-    margin:0;
-    padding:0 0 0 0;
-    list-style:none;
-    counter-reset:step;
-  }
-  ol.steps li{
-    counter-increment:step;
-    position:relative;
-    padding:0 0 16px 40px;
-    color:var(--ink-soft);
-  }
-  ol.steps li::before{
-    content:counter(step);
-    position:absolute;
-    left:0;
-    top:-1px;
-    font-family:'Fraunces', serif;
-    font-size:15px;
-    color:var(--brass);
-    border:1px solid var(--brass-line);
-    width:24px;height:24px;
-    border-radius:50%;
+  /* ---------- benefits grid ---------- */
+  .benefits{
     display:flex;
-    align-items:center;
-    justify-content:center;
+    flex-wrap:wrap;
+    margin:0 -16px;
+  }
+  .benefit{
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+    flex:1 1 44%;
+    margin:0 16px 28px;
+  }
+  .benefit svg.icon{ margin-top:2px; }
+  .benefit p{
+    margin:0;
+    color:var(--ink-soft);
+    font-size:15.5px;
+    line-height:1.5;
+  }
+  .benefit strong{
+    display:block;
+    color:var(--ink);
+    font-size:16.5px;
+    font-weight:600;
+    margin-bottom:2px;
   }
 
   /* ---------- CTA ---------- */
   .cta{
-    background:var(--brick);
+    background:var(--ink);
     color:var(--white);
-    padding:34px 32px;
-    margin:52px 0;
+    padding:48px 40px;
+    margin:64px 0;
+    text-align:center;
   }
   .cta .kicker{
-    font-size:13px;
-    color:#EAC6BB;
-    margin:0 0 6px;
+    font-size:14px;
+    color:var(--brass-line);
+    margin:0 0 10px;
+    letter-spacing:.02em;
   }
   .cta h3{
     font-family:'Fraunces', serif;
     font-weight:500;
-    font-size:24px;
-    margin:0 0 16px;
+    font-size:32px;
+    margin:0 0 28px;
     color:var(--white);
+    line-height:1.15;
   }
-  .cta .contact{
+  .cta .actions{
     display:flex;
+    justify-content:center;
+    gap:14px;
     flex-wrap:wrap;
-    gap:10px 26px;
-    font-size:15px;
-    margin-bottom:20px;
+    margin-bottom:26px;
   }
-  .cta .contact div{
-    margin-right:26px;
-    margin-bottom:8px;
-  }
-  .cta .contact span{color:#F3DCD4; font-size:12px; display:block;}
-  .cta .contact strong{color:var(--white); font-weight:600;}
   .cta a.button{
     display:inline-block;
-    background:var(--white);
-    color:var(--brick-deep);
     font-weight:600;
     text-decoration:none;
-    padding:12px 22px;
-    font-size:15px;
+    padding:14px 26px;
+    font-size:16px;
   }
-  .cta a.button:hover{background:#F3DCD4;}
+  .cta a.button.primary{ background:var(--brick); color:var(--white); }
+  .cta a.button.primary:hover{ background:var(--brick-deep); }
+  .cta a.button.secondary{ background:transparent; color:var(--white); border:1px solid rgba(255,255,255,.4); }
+  .cta a.button.secondary:hover{ border-color:#fff; }
+  .cta .signature{
+    font-size:14px;
+    color:#B9C2CB;
+  }
+  .cta .signature strong{ color:var(--white); }
 
   /* ---------- comps table ---------- */
   table{
@@ -252,20 +258,33 @@
     margin-top:14px;
   }
   .arv-line{
-    font-size:17px;
+    font-size:18px;
     color:var(--ink);
     font-weight:600;
-    margin:18px 0 6px;
+    margin:20px 0 6px;
   }
 
-  .docs-link{
-    display:inline-block;
-    margin-top:6px;
-    font-weight:600;
-    border-bottom:1px solid var(--brick);
-    padding-bottom:1px;
-    text-decoration:none;
+  .docs-cta{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:16px;
+    background:var(--paper-deep);
+    padding:24px 26px;
   }
+  .docs-cta p{margin:0; color:var(--ink-soft); font-size:15px;}
+  .docs-cta a.button{
+    display:inline-block;
+    background:var(--ink);
+    color:var(--white);
+    font-weight:600;
+    text-decoration:none;
+    padding:12px 22px;
+    font-size:15px;
+    white-space:nowrap;
+  }
+  .docs-cta a.button:hover{ background:var(--brick); }
 
   footer{
     border-top:1px solid var(--brass-line);
@@ -277,68 +296,97 @@
     line-height:1.6;
   }
 
-  @media (max-width:600px){
-    .ledger{grid-template-columns:repeat(2, 1fr); row-gap:20px;}
-    .ledger .stat:nth-child(3){border-left:none; padding-left:0;}
-    p.lede{font-size:19px;}
-    h1{font-size:34px;}
-  }
-
-  @media (prefers-reduced-motion: no-preference){
-    figure.hero img{
-      animation: reveal .9s ease-out both;
-    }
-    @keyframes reveal{
-      from{opacity:0; transform:translateY(8px);}
-      to{opacity:1; transform:translateY(0);}
-    }
+  @media (max-width:640px){
+    .facts .fact{flex:1 1 30%;}
+    .facts .fact:nth-child(4){border-left:none;}
+    .benefit{flex:1 1 100%;}
+    p.lede{font-size:20px;}
+    .cta{padding:36px 24px;}
+    .cta h3{font-size:26px;}
+    .docs-cta{flex-direction:column; align-items:flex-start;}
   }
 </style>
 </head>
 <body>
 
+  <div class="hero-wrap">
+    <img src="exterior.jpg" alt="Front exterior of 2136 Glenwood Ave, a two-story Foursquare home with a wraparound front porch">
+    <div class="hero-scrim"></div>
+    <div class="hero-content">
+      <div class="hero-inner">
+        <span class="hero-badge">Sold as-is · priced to move</span>
+        <h1>2136 Glenwood Ave</h1>
+        <p class="price">$98,900</p>
+        <p class="locale">Toledo, Ohio 43620<span class="sep">·</span>Old West End Historic District<span class="sep">·</span>Foursquare, built 1907</p>
+      </div>
+    </div>
+  </div>
+
   <div class="col">
-    <header class="masthead">
-      <div class="dateline">Off-market — Old West End Historic District</div>
-      <h1>2136 Glenwood Ave</h1>
-      <p class="locale">Toledo, Ohio 43620<span class="sep">·</span>Foursquare, built 1907</p>
-    </header>
 
-    <figure class="hero">
-      <img src="exterior.jpg" alt="Front exterior of 2136 Glenwood Ave, a two-story Foursquare home with a wraparound front porch">
-      <figcaption>2136 Glenwood Ave — front elevation</figcaption>
-    </figure>
-
-    <div class="ledger">
-      <div class="stat"><span class="num">$70,000</span><span class="lbl">Contract price</span></div>
-      <div class="stat"><span class="num">$210–250K</span><span class="lbl">Working ARV</span></div>
-      <div class="stat"><span class="num">3,600 SF</span><span class="lbl">6 bed / 4 bath</span></div>
-      <div class="stat"><span class="num">Dual HVAC</span><span class="lbl">Two furnaces, two AC</span></div>
+    <div class="facts">
+      <div class="fact">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6"/><path d="M3 18h18"/><path d="M5 10V7a2 2 0 0 1 2-2h3v5"/><path d="M3 21v-3M21 21v-3"/></svg>
+        <span class="num">6</span><span class="lbl">Bedrooms</span>
+      </div>
+      <div class="fact">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M4 12h16v3a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4v-3Z"/><path d="M6 12V6a2 2 0 0 1 3-1.7"/><path d="M4 19v2M18 19v2"/></svg>
+        <span class="num">4</span><span class="lbl">Bathrooms</span>
+      </div>
+      <div class="fact">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M3 3h6v6H3zM15 3h6v6h-6zM3 15h6v6H3zM15 15h6v6h-6z"/></svg>
+        <span class="num">3,600</span><span class="lbl">Square feet</span>
+      </div>
+      <div class="fact">
+        <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="1"/><path d="M3 9h18M8 3v3M16 3v3"/></svg>
+        <span class="num">1907</span><span class="lbl">Built</span>
+      </div>
+      <div class="fact">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M4.9 4.9l14.2 14.2M19.1 4.9 4.9 19.1"/></svg>
+        <span class="num">Dual</span><span class="lbl">Furnace + A/C</span>
+      </div>
     </div>
 
-    <p class="lede">A three-level Foursquare on one of the Old West End's strongest blocks, with the mechanicals already handled and original 1907 detail throughout — priced well under comparable renovated sales nearby. This is a hold-and-refinance opportunity, not a retail flip.</p>
+    <p class="lede">A spacious three-level Foursquare on one of the Old West End's strongest blocks — original 1907 character throughout, two furnaces and two A/C systems already in place, and room to build serious equity in a historic Toledo submarket.</p>
 
     <section>
       <h2>Why this deal works</h2>
-      <ul class="plain">
-        <li>Priced at $70,000 against a working ARV of $210,000–$250,000, in a neighborhood where comparable renovated homes are trading at $195K–$270K</li>
-        <li>Two newer high-efficiency Carrier furnaces and two central A/C condensers already installed — the single biggest capital cost in most rehabs, already handled</li>
-        <li>Three full finished levels plus a finished 3rd-floor attic bath — rare scale for the price point</li>
-        <li>Sound roof and a cosmetically clean 3rd floor keep the biggest structural risks limited, not open-ended</li>
-        <li>Original 1907 character intact — wood front door and vestibule, French doors, crown molding, wood mantel, solid wood kitchen cabinets</li>
-        <li>Positioned for a BRRRR or buy-and-hold strategy, refinancing against a $210K–$250K ARV in a market with steady rental demand</li>
-      </ul>
+      <div class="benefits">
+        <div class="benefit">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>
+          <p><strong>Real upside built in</strong>Priced at $98,900 against a working ARV of $210K–$250K, in a neighborhood where comparable renovated homes are trading at $195K–$270K.</p>
+        </div>
+        <div class="benefit">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M4.9 4.9l14.2 14.2M19.1 4.9 4.9 19.1"/></svg>
+          <p><strong>Mechanicals already handled</strong>Two newer high-efficiency Carrier furnaces and two central A/C condensers — the single biggest capital cost in most rehabs, done.</p>
+        </div>
+        <div class="benefit">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M3 3h6v6H3zM15 3h6v6h-6zM3 15h6v6H3zM15 15h6v6h-6z"/></svg>
+          <p><strong>Rare scale for the price</strong>Three full finished levels plus a finished 3rd-floor attic bath — unusual square footage at this price point.</p>
+        </div>
+        <div class="benefit">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M3 21l9-16 9 16z"/><path d="M12 12v5"/></svg>
+          <p><strong>Sound roof, clean top floor</strong>The 3rd floor is cosmetically clean and the roof shows no obvious signs of failure.</p>
+        </div>
+        <div class="benefit">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M4 21V9l8-6 8 6v12"/><path d="M9 21v-6h6v6"/></svg>
+          <p><strong>Original 1907 character</strong>Wood front door and vestibule, French doors, crown molding, wood mantel, solid wood kitchen cabinets.</p>
+        </div>
+        <div class="benefit">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M2 12h4l3-8 4 16 3-8h6"/></svg>
+          <p><strong>Built for a fast close</strong>Sold as-is, priced to move — no drawn-out negotiations, ideal for a BRRRR or buy-and-hold play.</p>
+        </div>
+      </div>
     </section>
 
     <div class="cta">
-      <div class="kicker">Serious buyers only</div>
-      <h3>Contract price $70,000 — schedule a walkthrough</h3>
-      <div class="contact">
-        <div><span>Contact</span><strong>[Your Name]</strong></div>
-        <div><span>Phone</span><strong>[Phone]</strong></div>
-        <div><span>Email</span><strong>[Email]</strong></div>
+      <div class="kicker">Serious buyers only — priced to move</div>
+      <h3>$98,900 — schedule a walkthrough before this one's gone</h3>
+      <div class="actions">
+        <a class="button primary" href="tel:2163323733">Call 216-332-3733</a>
+        <a class="button secondary" href="mailto:info@reivas.co?subject=2136%20Glenwood%20Ave">Email Sabeeh</a>
       </div>
-      <a class="button" href="mailto:youremail@example.com?subject=2136%20Glenwood%20Ave">Get in touch</a>
+      <div class="signature">Contact <strong>Sabeeh</strong> · <strong>info@reivas.co</strong></div>
     </div>
 
     <section>
@@ -359,35 +407,14 @@
     </section>
 
     <section>
-      <h2>Condition overview</h2>
-      <p style="color:var(--ink-soft); margin-top:0;">Disclosed transparently so buyers can underwrite with confidence. Full photo documentation is linked below.</p>
-      <ul class="plain">
-        <li>Interior water damage (ceiling staining, localized holes) on the main and 2nd floors — pattern points to a roof flashing or leak source rather than a full roof failure</li>
-        <li>Basement moisture staining in several areas — needs mold remediation and a waterproofing/drainage allowance</li>
-        <li>Electrical needs an update — two panels, older wiring, some loose connections to be addressed by a licensed electrician</li>
-        <li>Cosmetically dated throughout (kitchen, 3+ bathrooms, popcorn ceilings, wallpaper) — reflected in the price, not hidden in it</li>
-        <li>Full junk-out required before work or showing; some finishes are conservatively estimated until a post-junk-out walkthrough</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Buyer due-diligence checklist</h2>
-      <ol class="steps">
-        <li>Confirm single-family vs. legal 2-unit status with the Lucas County Auditor use code</li>
-        <li>Engage a roofer and a foundation/waterproofing contractor to scope the two largest open items</li>
-        <li>Walk the property post-junk-out to verify floor and lower-wall condition</li>
-        <li>Independently verify bed/bath count, square footage, and property class</li>
-      </ol>
-    </section>
-
-    <section>
-      <h2>Full photos &amp; supporting documents</h2>
-      <p style="color:var(--ink-soft); margin-top:0;">~110 photos across all levels, basement, and 3rd floor, plus supporting documents.</p>
-      <a class="docs-link" href="https://drive.google.com/drive/folders/1L_UAHVsOB5ej2aTf0gtH9bbjyna0aRM1?usp=sharing" target="_blank" rel="noopener">View photos and documents on Google Drive</a>
+      <div class="docs-cta">
+        <p><strong style="color:var(--ink); display:block; font-size:17px; margin-bottom:4px;">See it for yourself</strong>~110 photos across every level, basement, and 3rd floor, plus supporting documents.</p>
+        <a class="button" href="https://drive.google.com/drive/folders/1L_UAHVsOB5ej2aTf0gtH9bbjyna0aRM1?usp=sharing" target="_blank" rel="noopener">View photos &amp; documents</a>
+      </div>
     </section>
 
     <footer>
-      <p>All figures are good-faith estimates for discussion, not guarantees. ARV is from public comparable sales, not a formal appraisal. Condition notes are photo-based; some areas were obscured by clutter at the time of inspection. Bed/bath count, square footage, and property class are from public records and should be independently verified. This is a contract assignment, not an MLS listing. Nothing here constitutes legal, tax, or investment advice.</p>
+      <p>All figures are good-faith estimates for discussion, not guarantees. ARV is from public comparable sales, not a formal appraisal. Property is sold as-is; buyer is encouraged to complete independent inspections before closing. Bed/bath count, square footage, and property class are from public records and should be independently verified. This is a contract assignment, not an MLS listing. Nothing here constitutes legal, tax, or investment advice.</p>
     </footer>
   </div>
 
